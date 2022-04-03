@@ -1,3 +1,3 @@
-module github.com/nXnUs25/gopackage/v1
+module github.com/nXnUs25/gopackage
 
 go 1.14
