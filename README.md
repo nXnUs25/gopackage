@@ -41,5 +41,43 @@ func ShowVersion() {
 so now we can can initialize new package and test the package usage:
 
 ```shell
+❯ cd gopackage
+❯ go mod init github.com/nXnUs25/gopackage/v1
+go: creating new go.mod: module github.com/nXnUs25/gopackage/v1
+❯ git checkout -b v1
+Switched to a new branch 'v1'
+❯ git add .
+❯ git commit -m "initialize version 1.0.0"
+[v1 eb7bccd] initialize version 1.0.0
+ 3 files changed, 62 insertions(+), 1 deletion(-)
+ rewrite README.md (100%)
+ create mode 100644 go.mod
+ create mode 100644 gopackage.go
+❯ git tag v1.0.0
+❯ git push --tags origin v1
+Warning: Permanently added 'github.com' (ED25519) to the list of known hosts.
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (5/5), 1.07 KiB | 1.07 MiB/s, done.
+Total 5 (delta 0), reused 0 (delta 0)
+To github.com:nXnUs25/gopackage.git
+ * [new branch]      v1 -> v1
+ * [new tag]         v1.0.0 -> v1.0.0
+❯ git --no-pager branch -a
+  main
+* v1
+  remotes/origin/HEAD -> origin/main
+  remotes/origin/main
+  remotes/origin/v1
+```
+
+Now lets use it in the following packages
 
 ```
+├── callgopackage-latest
+├── callgopackage-v1
+```
+
+for this we will just create `go mod` so we have a file called `go.mod`
